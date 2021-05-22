@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn run cert:dev && webpack serve",
+    "build": "rm -rf dist && tsc -p tsconfig-build.json && yarn run copy-files",
+    "copy-files": "cp src/index.html dist/",
     "test": "jest",
     "watch_test": "jest --watch",
     "cert:dev": "mkcert -key-file localhost-key.pem -cert-file localhost.pem -install localhost"

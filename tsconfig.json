@@ -10,6 +10,8 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "downlevelIteration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "skipLibCheck": true
   },
   "include": ["src/**/*"]
