@@ -1,34 +1,39 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { GenericError } from '../type/errors';
 import { useAbortController } from './useAbortController';
 
 export type PromiseWithSignal<T> = (signal: AbortSignal) => Promise<T>;
 
 export function useFetch<T>(
   fnToFetch: PromiseWithSignal<T>,
-  dependency?: unknown[]
-): { data: T | undefined; error: unknown | undefined } {
-  const [data, setData] = useState<T | undefined>(undefined);
-  const [error, setError] = useState<unknown | undefined>();
+  dependency: unknown[]
+): { data?: T; error?: GenericError } {
+  const [response, setResponse] = useState<{ data?: T; error?: GenericError }>(
+    {}
+  );
+
   const builder = useMemo(
     () => (signal: AbortSignal) => () => fnToFetch(signal),
-    dependency || []
+    dependency
   );
 
   const [invoke, controller] = useAbortController(builder);
 
   useEffect(() => {
+    setResponse({});
     invoke()
       .then((res) => {
         if (controller.signal.aborted) return;
 
-        setData(res);
+        setResponse({ data: res });
       })
-      .catch((err) => {
+      .catch((err: GenericError) => {
         console.error(err);
-        setError(err);
-      });
-  }, dependency || []);
 
-  return { data, error };
+        setResponse({ error: err });
+      });
+  }, dependency);
+
+  return response;
 }

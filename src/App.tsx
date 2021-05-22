@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Controller } from './components/Controller';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { SearchController } from './components/SearchController';
 
 export default function App() {
   return (
     <ErrorBoundary>
-      <Controller />
+      <SearchController />
     </ErrorBoundary>
   );
 }

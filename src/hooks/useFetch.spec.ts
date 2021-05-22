@@ -5,7 +5,7 @@ import { useFetch } from './useFetch';
 describe("useFetch", () => {
   it("makes the result to change: from undefined to the value retrieve ", async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
-      useFetch<string>(fetchDataAsync)
+      useFetch<string>(fetchDataAsync, [])
     );
 
     expect(result.current.data).toBeUndefined();
@@ -15,7 +15,7 @@ describe("useFetch", () => {
 
   it("makes the result to change: from undefined to the value retrieve ", async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
-      useFetch<string>(fetchDataFailed)
+      useFetch<string>(fetchDataFailed, [])
     );
 
     expect(result.current.data).toBeUndefined();
