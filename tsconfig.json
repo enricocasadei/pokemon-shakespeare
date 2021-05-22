@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["react", "jest", "node"],
+    "types": ["react", "jest"],
     "jsx": "react",
     "target": "ES2019",
     "lib": ["dom", "ES2020"],
