@@ -1,16 +1,19 @@
 ## Commands
 
-### Prestart
+## Prerequisites
 
-The first time you run the server you will need to install [mkcert](https://github.com/FiloSottile/mkcert#macos) and run the following command:
+Install the following dependencies
 
-    npm run cert:dev
-
-This command adds some keys necessary to run the development on localhost on https
-
+1. Node (lts)
+2. Docker (optional)
 
 
-docker build  -t pokemon-shakespeare .
+## Start with docker
 
+Build a Docker image using it
 
-docker run -p 3000:3000 pokemon-shakespeare
+```docker build --rm -t pokemon-shakespeare .```
+
+Run the Docker image to run the container for the app
+
+```docker run -p 8080:8080 pokemon-shakespeare```

@@ -1,14 +1,7 @@
-FROM node:alpine3.11
-
-RUN mkdir -p /app
-WORKDIR /app
-
-COPY . .
-
+FROM node:12.8.0-alpine
+WORKDIR /client
+COPY . ./
 RUN yarn
-
-RUN yarn run build
-
-#EXPOSE 9000
-
-#CMD [ "yarn", "start" ]
+COPY . .
+EXPOSE 8080
+CMD yarn start

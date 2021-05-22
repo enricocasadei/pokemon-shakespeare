@@ -10,9 +10,10 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "downlevelIteration": true,
-    "outDir": "./dist",
+    "outDir": "./build",
     "rootDir": "./src",
     "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build", "**/*.spec.ts"]
 }

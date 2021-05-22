@@ -9,11 +9,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   devServer: {
-    contentBase: path.join(__dirname, "src"),
-    port: 9000,
-    https: true,
-    key: path.join(__dirname + "/localhost-key.pem"),
-    cert: path.join(__dirname + "/localhost.pem")
+    contentBase: path.join(__dirname, "src")
   },
   module: {
     rules: [

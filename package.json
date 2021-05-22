@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run cert:dev && webpack serve",
-    "build": "rm -rf dist && tsc -p tsconfig-build.json && yarn run copy-files",
-    "copy-files": "cp src/index.html dist/",
+    "start": "webpack serve",
+    "build": "rm -rf build && webpack",
     "test": "jest",
-    "watch_test": "jest --watch",
-    "cert:dev": "mkcert -key-file localhost-key.pem -cert-file localhost.pem -install localhost"
+    "watch_test": "jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.13.1",
