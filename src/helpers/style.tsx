@@ -4,4 +4,5 @@ export const colors = {
   blue: "#0076f5",
   lightBlue: "#ebf4ff",
   critical: "#d11e0d",
+  disabled: "#b6c1ce",
 } as const;

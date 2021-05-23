@@ -8,36 +8,13 @@ const MediaQuery = {
 } as const;
 type MediaSize = keyof typeof MediaQuery;
 
-const Gutter = {
+const Spacing = {
   xsmall: "8px",
   small: "16px",
   medium: "24px",
   large: "32px",
 } as const;
-type GapSize = keyof typeof Gutter;
-
-const media = {
-  xs: (styles: string) => `
-    @media only screen and (max-width: 480px){
-        ${styles}
-    }
-    `,
-  s: (styles: string) => `
-    @media only screen and (max-width: 768px){
-        ${styles}
-    }
-    `,
-  m: (styles: string) => `
-    @media only screen and (max-width: 1024px){
-        ${styles}
-    }
-    `,
-  l: (styles: string) => `
-    @media only screen and (max-width: 1440px){
-        ${styles}
-    }
-    `,
-};
+type SpacingSize = keyof typeof Spacing;
 
 export const Grid = styled.div`
   width: 100%;
@@ -55,8 +32,12 @@ export const Grid = styled.div`
   }
 `;
 
+export const Box = styled.div``
+
+
 export const Row = styled.div<{
-  gap?: GapSize;
+  gap?: SpacingSize;
+  pad?: SpacingSize;
   justify?: keyof typeof AlignStyle.justify;
   align?: keyof typeof AlignStyle.align;
 }>`
@@ -66,7 +47,8 @@ export const Row = styled.div<{
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  ${(props) => props.gap && `gap:${Gutter[props.gap]}`};
+  ${(props) => props.pad && `padding:${Spacing[props.pad]}`};
+  ${(props) => props.gap && `gap:${Spacing[props.gap]}`};
   ${(props) => props.align && `align-items:${AlignStyle.align[props.align]}`}
   ${(props) =>
     props.justify && `justify-content:${AlignStyle.justify[props.justify]}`};
@@ -79,24 +61,19 @@ export const Col = styled.div<{
   width?: string;
   align?: keyof typeof AlignStyle.align;
   justify?: keyof typeof AlignStyle.justify;
+  gap?: SpacingSize;
+  pad?: SpacingSize;
 }>`
   box-sizing: border-box;
   max-width: 100%;
+  ${(props) => props.pad && `padding:${Spacing[props.pad]}`};
+  ${(props) => props.gap && `gap:${Spacing[props.gap]}`};
   flex: ${(props) => (props.size ? `${props.size} 0 auto` : `1 0 auto`)};
   ${(props) =>
     props.align &&
     `align-items:${AlignStyle.align[props.align]}; text-align: center;`};
   ${(props) =>
     props.justify && `justify-content:${AlignStyle.justify[props.justify]}`};
-  ${(props) =>
-    props.collapse &&
-    (props.collapse === true
-      ? media["s"](`
-    display:none;
-    `)
-      : media[props.collapse](`
-display:none;
-`))};
   ${(props) => props.background && `background: ${props.background}`};
   ${(props) => props.width && `width: ${props.width}`};
 `;
@@ -145,8 +122,23 @@ export const Container = styled.div`
 
 export const Section = styled.div`
   box-sizing: border-box;
-  padding-top: 32px;
-  padding-bottom: 32px;
+
+  @media (min-width: ${MediaQuery.xs}) {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+  @media (min-width: ${MediaQuery.s}) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+  @media (min-width: ${MediaQuery.m}) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @media (min-width: ${MediaQuery.l}) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 
   & > :last-child {
     margin-bottom: 0;
