@@ -1,5 +1,5 @@
 import { GenericError, NetworkError } from '../type/errors';
-import { Pokemon, PokemonListReturn } from '../type/pokemon';
+import { Pokemon, PokemonListReturn, PokemonSaved } from '../type/pokemon';
 import { fakeShake } from './shakespeare';
 
 const BASE_POKEMON_URL = "https://pokeapi.co/api/v2";
@@ -15,7 +15,7 @@ export function getOriginalPokemonListUrl() {
 export async function getTranslation(
   name: string,
   signal: AbortSignal
-): Promise<string> {
+): Promise<PokemonSaved> {
   const response = await fetch(getPokemonUrl(name), { signal });
 
   if (response.ok) {
@@ -24,11 +24,12 @@ export async function getTranslation(
       (text) => text.language.name === "en"
     );
     if (text && text.flavor_text) {
-      const shakespeareResponse = await fakeShake(
-        text.flavor_text,
-        signal
-      );
-      return shakespeareResponse;
+      const shakespeareResponse = await fakeShake(text.flavor_text, signal);
+      return {
+        name,
+        id: data.id,
+        text: shakespeareResponse,
+      };
     } else {
       throw new GenericError("Pokemon description to translate not found");
     }

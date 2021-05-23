@@ -1,4 +1,5 @@
 export type Pokemon = {
+  id: number;
   flavor_text_entries: {
     flavor_text: string;
     language: {
@@ -18,6 +19,7 @@ export type PokemonListReturn = {
 };
 
 export type PokemonSaved = {
+  id: number;
   name: string;
   text: string;
 };

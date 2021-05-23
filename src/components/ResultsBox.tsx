@@ -15,6 +15,6 @@ export function ResultsBox(props: { pokemon: string }) {
   if (!data) {
     return error ? <ErrorText>{error.message}</ErrorText> : <Spinner />;
   } else {
-    return <PokemonCard name={props.pokemon} text={data} />;
+    return <PokemonCard {...data} />;
   }
 }

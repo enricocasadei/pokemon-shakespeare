@@ -35,7 +35,7 @@ export function InputWithAutoComplete(props: InputProps<string>) {
     setIsComponentVisible(false);
 
     setSearch({
-      text: value,
+      text: "",
       suggestions: [],
     });
     props.onChange(value);
@@ -45,19 +45,6 @@ export function InputWithAutoComplete(props: InputProps<string>) {
 
   return (
     <Container>
-      <div
-        onClick={() => setIsComponentVisible(false)}
-        style={{
-          display: isComponentVisible ? "block" : "none",
-          width: "200vw",
-          height: "200vh",
-          backgroundColor: "transparent",
-          position: "fixed",
-          zIndex: 0,
-          top: 0,
-          left: 0,
-        }}
-      />
       <div>
         <Input
           id="input"
@@ -171,5 +158,5 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 460px;
-  margin: auto;
+  margin: 32px auto;
 `;

@@ -9,6 +9,8 @@ export const CardWrapper = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   background: #fff;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const CardHeader = styled.header`
@@ -43,4 +45,12 @@ export const CardButton = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
   }
+
+  ${(props) =>
+    props.disabled &&
+    `
+  background-color: ${colors.border};
+  cursor: not-allowed;
+  pointer-events: all !important; 
+  `}
 `;
