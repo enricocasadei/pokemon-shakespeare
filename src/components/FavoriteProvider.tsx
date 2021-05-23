@@ -12,6 +12,9 @@ type StorageContextType = [
 
 const StorageContext = createContext<StorageContextType>([null, () => {}]);
 
+/**
+ * This is the provider for the local storage used in order to save the list of favorite
+ * */
 export function FavoriteProvider(props: {
   children: JSX.Element[] | JSX.Element;
 }) {
@@ -24,6 +27,10 @@ export function FavoriteProvider(props: {
   );
 }
 
+/**
+ * This is a hook created to use the context for the list of favorite
+ * and to enrich it with single add and remove pokemon functionality
+ * */
 export function useStorage(): {
   store: StorageContextType;
   addPokemon: (newPokemon: PokemonSaved) => void;

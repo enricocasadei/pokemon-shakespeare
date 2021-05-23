@@ -1,7 +1,7 @@
 ### Pokemon & Shakespeare
 
-This project has been develop starting from scratch using webpack, React, typescript, styled-components and Docker.
-There is a simple engine that given a Pokemon name returns its Shakespearean description. There is also the possibility to add a Pokemon to the list of your favorite!
+This project has been developed starting from scratch using Webpack, React, Typescript, styled-components and Docker.
+There is a simple engine that given a Pokemon name returns its Shakespearean description. There is also the possibility to add a Pokemon to the list of your favorite. It is accessible by keyboard only and responsive.
 
 ## Prerequisites
 

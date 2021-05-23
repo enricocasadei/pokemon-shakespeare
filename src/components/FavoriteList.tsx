@@ -7,6 +7,9 @@ import { useStorage } from './FavoriteProvider';
 import { CardBody, CardHeader, CardWrapper } from './UI/Card';
 import { Text } from './UI/Text';
 
+/**
+ * List of favorite pokemon. It allows removing a single pokemon
+ */
 export function FavoriteList() {
   const { store, removePokemon } = useStorage();
   const pokemons = store[0];

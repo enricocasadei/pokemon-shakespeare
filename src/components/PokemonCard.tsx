@@ -15,6 +15,9 @@ type PokemonCardProps =
       disabled?: false;
     } & PokemonSaved);
 
+/**
+ * simply a card for show the power of shakespeare with a pokemon combined!
+ * */
 export function PokemonCard(props: PokemonCardProps) {
   const { store, addPokemon, removePokemon } = useStorage();
 
@@ -65,6 +68,9 @@ export function PokemonCard(props: PokemonCardProps) {
   );
 }
 
+/**
+ * Dump component to joke and show a skeleton in case no pokemon is selected... Nothing is better than a Shakespeare's quote!
+ * */
 function EmptyCard() {
   return (
     <CardWrapper>
