@@ -1,5 +1,7 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 
+import { ErrorText } from './ErrorText';
+
 interface State {
   hasError: boolean;
 }
@@ -24,7 +26,7 @@ export class ErrorBoundary extends Component<
 
   public render() {
     if (this.state.hasError) {
-      return <h1>Sorry.. there was an error</h1>;
+      return <ErrorText>Unexpected error!</ErrorText>;
     }
 
     return this.props.children;

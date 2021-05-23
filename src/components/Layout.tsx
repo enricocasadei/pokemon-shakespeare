@@ -53,42 +53,6 @@ export const Grid = styled.div`
   & > * > :last-child {
     margin-bottom: 0;
   }
-
-  @media (max-width: ${MediaQuery.xs}) {
-    .uk-grid {
-      margin-left: -8px;
-    }
-    .uk-grid > * {
-      padding-left: 8px;
-    }
-  }
-
-  @media (min-width: ${MediaQuery.s}) {
-    .uk-grid {
-      margin-left: -16px;
-    }
-    .uk-grid > * {
-      padding-left: 16px;
-    }
-  }
-
-  @media (min-width: ${MediaQuery.m}) {
-    .uk-grid {
-      margin-left: -24px;
-    }
-    .uk-grid > * {
-      padding-left: 24px;
-    }
-  }
-
-  @media (min-width: ${MediaQuery.l}) {
-    .uk-grid {
-      margin-left: -32px;
-    }
-    .uk-grid > * {
-      padding-left: 32px;
-    }
-  }
 `;
 
 export const Row = styled.div<{
@@ -151,3 +115,40 @@ const AlignStyle = {
     center: "center",
   },
 };
+
+export const Container = styled.div`
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: ${MediaQuery.xs}) {
+    max-width: 480px;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  @media (min-width: ${MediaQuery.s}) {
+    max-width: 768px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  @media (min-width: ${MediaQuery.m}) {
+    max-width: 1024px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (min-width: ${MediaQuery.l}) {
+    max-width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+`;
+
+export const Section = styled.div`
+  box-sizing: border-box;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+`;

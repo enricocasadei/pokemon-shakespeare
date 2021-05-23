@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { colors } from '../helpers/style';
+
 
 const rotate360 = keyframes`
   from {
@@ -17,7 +19,7 @@ export const Spinner = styled.div`
   border-top: 2px solid grey;
   border-right: 2px solid grey;
   border-bottom: 2px solid grey;
-  border-left: 4px solid black;
+  border-left: 4px solid ${colors.blue};
   background: transparent;
   width: 24px;
   height: 24px;

@@ -1,5 +1,6 @@
 import { GenericError, NetworkError } from '../type/errors';
 import { Pokemon, PokemonListReturn } from '../type/pokemon';
+import { fakeShake } from './shakespeare';
 
 const BASE_POKEMON_URL = "https://pokeapi.co/api/v2";
 
@@ -11,21 +12,33 @@ export function getOriginalPokemonListUrl() {
   return `${BASE_POKEMON_URL}/pokemon?limit=151`;
 }
 
-export async function getPokemon(
+export async function getTranslation(
   name: string,
   signal: AbortSignal
-): Promise<Pokemon> {
+): Promise<string> {
   const response = await fetch(getPokemonUrl(name), { signal });
 
   if (response.ok) {
-    return await response.json();
+    const data = (await response.json()) as Pokemon;
+    const text = data.flavor_text_entries.find(
+      (text) => text.language.name === "en"
+    );
+    if (text && text.flavor_text) {
+      const shakespeareResponse = await fakeShake(
+        text.flavor_text,
+        signal
+      );
+      return shakespeareResponse;
+    } else {
+      throw new GenericError("Pokemon description to translate not found");
+    }
   }
 
   if (response.status === 404) {
     throw new GenericError("Pokemon not found");
   }
 
-  throw new NetworkError("getPokemon failed");
+  throw new NetworkError("Translation is not possible right now, try later");
 }
 
 export async function getOriginalPokemonList(
@@ -42,5 +55,5 @@ export async function getOriginalPokemonList(
     }
   }
 
-  throw new NetworkError("getPokemon failed");
+  throw new NetworkError("It is not possible to retrieve the list of pokemon");
 }
