@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+
 export function useLocalStorage<T extends object>(
   key: string,
   defaultValue?: T

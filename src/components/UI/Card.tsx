@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '../helpers/style';
+import { colors } from '../../helpers/style';
 
 export const CardWrapper = styled.div`
   overflow: hidden;

@@ -2,12 +2,12 @@ import React, { ChangeEvent, useState } from 'react';
 import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from 'react-icons/fa';
 import styled from 'styled-components';
 
-import { getOriginalPokemonList } from '../api/pokemon';
-import { colors } from '../helpers/style';
-import { useFetch } from '../hooks/useFetch';
-import { InputProps } from '../type/input';
+import { getOriginalPokemonList } from '../../api/pokemon';
+import { colors } from '../../helpers/style';
+import { useFetch } from '../../hooks/useFetch';
+import { InputProps } from '../../type/input';
 
-export function AutoComplete(props: InputProps<string>) {
+export function InputWithAutoComplete(props: InputProps<string>) {
   const { data = [] } = useFetch(
     (signal: AbortSignal) => getOriginalPokemonList(signal),
     []

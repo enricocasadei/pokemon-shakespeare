@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import { cleanString } from '../helpers/utils';
-import { AutoComplete } from './AutoComplete';
-import { Col, Container, Grid, Row, Section } from './Layout';
 import { ResultsBox } from './ResultsBox';
-import { Text } from './Text';
+import { InputWithAutoComplete } from './UI/InputWithAutoComplete';
+import { Col, Container, Grid, Row, Section } from './UI/Layout';
+import { Text } from './UI/Text';
 
 export function SearchController() {
   const [pokemon, setPokemon] = useState<string>("");
@@ -25,13 +25,13 @@ export function SearchController() {
               </Text>
             </Col>
             <Col width="100%" align="center">
-              <AutoComplete
+              <InputWithAutoComplete
                 value={pokemon}
                 onChange={(value?: string) => setPokemon(value || "")}
               />
             </Col>
             <Col width="100%" align="center">
-              {pokemon && pokemon.length > 3 ? (
+              {pokemon ? (
                 <ResultsBox pokemon={cleanString(pokemon)} />
               ) : (
                 <></>

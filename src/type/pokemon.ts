@@ -16,3 +16,8 @@ export type PokemonListReturn = {
     url: string;
   }[];
 };
+
+export type PokemonSaved = {
+  name: string;
+  text: string;
+};

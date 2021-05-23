@@ -1,6 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 
-import { ErrorText } from './ErrorText';
+import { ErrorText } from './UI/ErrorText';
 
 interface State {
   hasError: boolean;
