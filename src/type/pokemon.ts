@@ -6,3 +6,13 @@ export type Pokemon = {
     };
   }[];
 };
+
+export type PokemonListReturn = {
+  count: number;
+  next: string;
+  previous: string;
+  results: {
+    name: string;
+    url: string;
+  }[];
+};

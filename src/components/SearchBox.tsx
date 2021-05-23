@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-export function SearchBox(props: {
-  onChange: (value: string) => void;
-  value?: string;
-}) {
+import { InputProps } from '../type/input';
+
+export function SearchBox(props: InputProps<string>) {
   const [value, setValue] = useState<string>(props.value || "");
-  // eslint-disable-next-line
+
   const delayedSet = useCallback<(args: string) => void>(
     debounce<string>(props.onChange, 500),
     [props.onChange, debounce]

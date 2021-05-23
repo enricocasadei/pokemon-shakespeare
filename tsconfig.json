@@ -5,6 +5,7 @@
     "target": "ES2019",
     "lib": ["dom", "ES2020"],
     "strict": true,
+    "moduleResolution": "Node",
     "importHelpers": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
