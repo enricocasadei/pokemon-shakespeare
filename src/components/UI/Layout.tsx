@@ -1,6 +1,19 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import { MediaQuery } from '../../helpers/style';
+import { colors, MediaQuery } from '../../helpers/style';
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+    font-family: Titillium Web, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: #eff1f3;
+    color: ${colors.text};
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+`;
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -34,7 +47,7 @@ export const Section = styled.div<{ align?: string }>`
   text-align: ${(props) => (props.align ? props.align : "left")};
   padding-top: 32px;
   padding-bottom: 32px;
-  
+
   @media (max-width: ${MediaQuery.xs}) {
     padding-top: 26px;
     padding-bottom: 26px;

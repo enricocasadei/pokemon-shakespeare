@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { MediaQuery } from '../helpers/style';
 import { cleanString } from '../helpers/utils';
-import { FavoriteListController } from './FavoriteListController';
+import { FavoriteList } from './FavoriteList';
 import { PokemonCard } from './PokemonCard';
 import { ResultsBox } from './ResultsBox';
 import { InputWithAutoComplete } from './UI/InputWithAutoComplete';
@@ -35,8 +35,7 @@ export function Controller() {
           ) : (
             <PokemonCard disabled={true} />
           )}
-
-          <FavoriteListController />
+          <FavoriteList />
         </Grid>
       </Section>
     </Container>

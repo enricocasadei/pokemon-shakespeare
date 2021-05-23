@@ -19,31 +19,7 @@ export function PokemonCard(props: PokemonCardProps) {
   const { store, addPokemon, removePokemon } = useStorage();
 
   if (props.disabled === true) {
-    return (
-      <CardWrapper>
-        <CardHeader>
-          <Text size={1.5} weight="bold" align="center" color={colors.disabled}>
-            Shakespeare knows nothing
-          </Text>
-        </CardHeader>
-        <CardBody>
-          <Text size={1} color={colors.disabled}>
-            "What a piece of work is a man! How noble in reason, how infinite in
-            faculty! In form and moving how express and admirable! In action how
-            like an Angel! in apprehension how like a god! The beauty of the
-            world! The paragon of animals! And yet to me, what is this
-            quintessence of dust? Man delights not me; no, nor Woman neither;
-            though by your smiling you seem to say so.."
-          </Text>
-          <br />
-          <br />
-          <Text size={0.75} color={colors.disabled}>(Hamlet, act 2 scene 2)</Text>
-        </CardBody>
-        <CardFooter>
-          <CardButton disabled>Add to Favorite</CardButton>
-        </CardFooter>
-      </CardWrapper>
-    );
+    return <EmptyCard />;
   }
 
   const isPokemonPresent = store[0]?.find(
@@ -84,6 +60,36 @@ export function PokemonCard(props: PokemonCardProps) {
             Add to Favorite
           </CardButton>
         )}
+      </CardFooter>
+    </CardWrapper>
+  );
+}
+
+function EmptyCard() {
+  return (
+    <CardWrapper>
+      <CardHeader>
+        <Text size={1.5} weight="bold" align="center" color={colors.disabled}>
+          Shakespeare knows nothing
+        </Text>
+      </CardHeader>
+      <CardBody>
+        <Text size={1} color={colors.disabled}>
+          "What a piece of work is a man! How noble in reason, how infinite in
+          faculty! In form and moving how express and admirable! In action how
+          like an Angel! in apprehension how like a god! The beauty of the
+          world! The paragon of animals! And yet to me, what is this
+          quintessence of dust? Man delights not me; no, nor Woman neither;
+          though by your smiling you seem to say so.."
+        </Text>
+        <br />
+        <br />
+        <Text size={0.75} color={colors.disabled}>
+          (Hamlet, act 2 scene 2)
+        </Text>
+      </CardBody>
+      <CardFooter>
+        <CardButton disabled>Add to Favorite</CardButton>
       </CardFooter>
     </CardWrapper>
   );

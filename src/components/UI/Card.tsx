@@ -30,6 +30,8 @@ export const CardFooter = styled.div`
 export const CardButton = styled.button`
   display: block;
   width: 100%;
+  max-width: 286px;
+  margin: auto;
   padding: 12px 0;
   font-size: 1rem;
   font-weight: 700;

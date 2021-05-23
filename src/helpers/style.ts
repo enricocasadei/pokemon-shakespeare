@@ -5,6 +5,7 @@ export const colors = {
   lightBlue: "#ebf4ff",
   critical: "#d11e0d",
   disabled: "#b6c1ce",
+  text: "#19191a",
 } as const;
 
 export const MediaQuery = {
