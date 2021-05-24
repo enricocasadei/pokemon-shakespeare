@@ -52,7 +52,7 @@ export function PokemonCard(props: PokemonCardProps) {
               removePokemon(props);
             }}
           >
-            Remove from Favorite
+            Remove from Favorites
           </CardButton>
         ) : (
           <CardButton
@@ -60,7 +60,7 @@ export function PokemonCard(props: PokemonCardProps) {
               addPokemon(props);
             }}
           >
-            Add to Favorite
+            Add to Favorites
           </CardButton>
         )}
       </CardFooter>

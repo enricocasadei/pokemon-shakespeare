@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 export function useLocalStorage<T extends object>(
   key: string,
   defaultValue?: T
@@ -23,7 +22,7 @@ export function useLocalStorage<T extends object>(
         }
       }
     } catch (error) {
-      console.log(`Error in setting the key: ${key}`, error);
+      console.error(`Error in setting the key: ${key}`, error);
     }
   }, [key, setStoredValue]);
 
@@ -32,7 +31,7 @@ export function useLocalStorage<T extends object>(
       window.localStorage.setItem(key, JSON.stringify(value));
       setStoredValue(value);
     } catch (error) {
-      console.log(`Error in setting the key: ${key}`, error);
+      console.error(`Error in setting the key: ${key}`, error);
     }
   };
 

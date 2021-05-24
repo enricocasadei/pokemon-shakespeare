@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { colors } from '../../helpers/style';
+
+const basicPadding = css`
+  padding: 32px 32px 32px 32px;
+`;
 
 export const CardWrapper = styled.div`
   overflow: hidden;
@@ -14,17 +18,17 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardHeader = styled.header`
-  padding: 32px 32px;
+  ${basicPadding}
   border-bottom: 1px solid ${colors.border};
 `;
 
 export const CardBody = styled.div`
-  padding: 32px 32px 32px 32px;
+  ${basicPadding}
 `;
 
 export const CardFooter = styled.div`
   border-top: 1px solid ${colors.border};
-  padding: 32px 32px 32px 32px;
+  ${basicPadding}
 `;
 
 export const CardButton = styled.button`

@@ -4,29 +4,22 @@ import styled from 'styled-components';
 import { MediaQuery } from '../helpers/style';
 import { cleanString } from '../helpers/utils';
 import { FavoriteList } from './FavoriteList';
+import { IntroductoryText } from './IntroductoryText';
 import { PokemonCard } from './PokemonCard';
 import { PokemonInput } from './PokemonInput';
 import { ResultsBox } from './ResultsBox';
 import { Container, Section } from './UI/Layout';
-import { Text } from './UI/Text';
 
 /**
  * Main component to manage the state of the application between the children components
  * it implements a simple grid in order to be responsive
- * */ 
+ * */
 export function Controller() {
   const [currentPokemon, setCurrentPokemon] = useState<string>();
   return (
     <Container>
       <Section align="center">
-        <Text size={1.25}>
-          What if the description of each of the original 151 pokemon were to be
-          written using Shakespeare's style?
-          <br />
-          And in addition you can select a list of favorite too?!
-          <br />
-          Super COOL!
-        </Text>
+        <IntroductoryText />
         <PokemonInput
           value={currentPokemon}
           onChange={(value?: string) => setCurrentPokemon(value || "")}

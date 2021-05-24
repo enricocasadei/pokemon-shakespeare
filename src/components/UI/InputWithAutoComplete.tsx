@@ -25,7 +25,7 @@ export function InputWithAutoComplete(
   const { suggestions } = search;
 
   return (
-    <Container onKeyDown={handleKeyDown} id="pippo">
+    <Container onKeyDown={handleKeyDown}>
       <div>
         <Input
           id="input"
@@ -34,6 +34,7 @@ export function InputWithAutoComplete(
           onChange={onTextChanged}
           type={"text"}
           placeholder="Start typing..."
+          aria-label="pokemon-input"
         />
         <AutoCompleteIcon>
           {!isComponentVisible ? (
@@ -46,7 +47,11 @@ export function InputWithAutoComplete(
       {suggestions.length > 0 && isComponentVisible && (
         <AutoCompleteContainer>
           {suggestions.map((item, index) => (
-            <AutoCompleteItem key={item} focused={index === focused}>
+            <AutoCompleteItem
+              key={item}
+              focused={index === focused}
+              data-testid={item}
+            >
               <AutoCompleteItemButton
                 key={item}
                 onClick={() => suggestionSelected(item)}
