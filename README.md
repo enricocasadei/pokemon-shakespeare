@@ -1,10 +1,10 @@
 ### Pokemon & Shakespeare
 
-Here it is a simple engine that given a Pokemon name returns its Shakespearean description with also the possibility to add a Pokemon to the list of your favorite.\_\_
+Here it is a simple engine that given a Pokemon name returns its Shakespearean description with also the possibility to add a Pokemon to the list of your favorite.\\
 
-It is accessible by keyboard only following the guideline of the [webaim](https://webaim.org/techniques/keyboard/#testing).\_\_
+It is accessible by keyboard only following the guideline of the [webaim](https://webaim.org/techniques/keyboard/#testing).\\
 
-This project has been developed starting from scratch using Webpack, React, Typescript, styled-components and Docker. The webpage is responsive.\_\_
+This project has been developed starting from scratch using Webpack, React, Typescript, styled-components and Docker. The webpage is responsive.\\
 
 ## Prerequisites
 

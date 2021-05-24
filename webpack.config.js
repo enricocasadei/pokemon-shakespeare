@@ -10,7 +10,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "src"),
-    hot: true
+    hot: true,
   },
   module: {
     rules: [
@@ -23,14 +23,12 @@ module.exports = {
         test: /\.(css)$/,
         use: ["style-loader", "css-loader"],
       },
-      {
-        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-        use: ["file-loader"],
-      },
+      { test: /\.(jpe?g|png|gif|ico|svg)$/i, use: "file?name=[name].[ext]" },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "src/images/favicon.ico",
       template: path.join(__dirname, "src", "index.html"),
     }),
   ],

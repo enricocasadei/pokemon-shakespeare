@@ -8,9 +8,10 @@ export function IntroductoryText() {
       What if the description of each of the original 151 pokemon were to be
       written using Shakespeare's style?
       <br />
-      And in addition you can select a list of favorite too?!
+      And what about if creating a list of favorite Pokemon had been allowed,
+      too?
       <br />
-      Super COOL!
+      Sounds great, doesn’t it?
     </Text>
   );
 }
