@@ -3,7 +3,7 @@ import { FaTrash } from 'react-icons/fa';
 import styled from 'styled-components';
 
 import { colors } from '../helpers/style';
-import { useStorage } from './FavoriteProvider';
+import { useStorage } from './FavoritesProvider';
 import { CardBody, CardHeader, CardWrapper } from './UI/Card';
 import { Text } from './UI/Text';
 

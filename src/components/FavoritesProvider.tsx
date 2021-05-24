@@ -15,7 +15,7 @@ const StorageContext = createContext<StorageContextType>([null, () => {}]);
 /**
  * This is the provider for the local storage used in order to save the list of favorite
  * */
-export function FavoriteProvider(props: {
+export function FavoritesProvider(props: {
   children: JSX.Element[] | JSX.Element;
 }) {
   const storage = useLocalStorage<PokemonSaved[]>(KEY_STORAGE);

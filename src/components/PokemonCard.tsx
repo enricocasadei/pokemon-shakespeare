@@ -3,7 +3,7 @@ import React from 'react';
 import { colors } from '../helpers/style';
 import { stripHtml } from '../helpers/utils';
 import { PokemonSaved } from '../type/pokemon';
-import { useStorage } from './FavoriteProvider';
+import { useStorage } from './FavoritesProvider';
 import { CardBody, CardButton, CardFooter, CardHeader, CardWrapper } from './UI/Card';
 import { Text } from './UI/Text';
 

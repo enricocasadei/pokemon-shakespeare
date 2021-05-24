@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from 'react';
 import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from 'react-icons/fa';
 import styled from 'styled-components';
 
-import { colors } from '../../helpers/style';
+import { colors, Spacing } from '../../helpers/style';
 import { InputProps } from '../../type/input';
 
 /**
@@ -87,6 +87,7 @@ export function InputWithAutoComplete(
   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
+
     switch (event.key) {
       case "ArrowUp":
         event.preventDefault();
@@ -111,6 +112,7 @@ export function InputWithAutoComplete(
         break;
       case "Tab":
       case "Escape":
+        setIsComponentVisible(false)
         setSearch({
           text: "",
           suggestions: [],
@@ -128,8 +130,8 @@ export function InputWithAutoComplete(
 const ValueWrapper = styled.input`
   width: 100%;
   padding-left: 8px;
-  padding-right: 32px;
-  height: 32px;
+  padding-right: ${Spacing.large};
+  height: ${Spacing.large};
   box-sizing: border-box;
   border-radius: 1px;
   border: 1px solid ${colors.border};
@@ -140,8 +142,8 @@ const AutoCompleteIcon = styled.span`
   position: absolute;
   top: 0;
   right: 0;
-  height: 32px;
-  width: 32px;
+  height: ${Spacing.large};
+  width: ${Spacing.large};
   line-height: 2.25;
 
   ${ValueWrapper}:focus + & {
@@ -208,5 +210,5 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 460px;
-  margin: 32px auto;
+  margin: ${Spacing.large} auto;
 `;

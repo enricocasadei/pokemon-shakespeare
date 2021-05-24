@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { MediaQuery } from '../helpers/style';
+import { MediaQuery, Spacing } from '../helpers/style';
 import { cleanString } from '../helpers/utils';
 import { FavoriteList } from './FavoriteList';
 import { IntroductoryText } from './IntroductoryText';
@@ -42,9 +42,9 @@ export function Controller() {
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 32px;
+  grid-gap: ${Spacing.large};
 
-  @media all and (max-width: ${MediaQuery.m}) {
+  @media all and (max-width: ${MediaQuery.medium}) {
     grid-template-columns: 1fr;
   }
 `;

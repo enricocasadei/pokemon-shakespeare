@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { colors } from '../../helpers/style';
+import { colors, Spacing } from '../../helpers/style';
 
 const basicPadding = css`
-  padding: 32px 32px 32px 32px;
+  padding: ${Spacing.large};
 `;
 
 export const CardWrapper = styled.div`

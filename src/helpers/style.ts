@@ -1,3 +1,4 @@
+/* centralize the color palette */
 export const colors = {
   link: "#0063cc",
   border: "#b6c1ce",
@@ -8,11 +9,12 @@ export const colors = {
   text: "#19191a",
 } as const;
 
+/* centralize the breakpoint */
 export const MediaQuery = {
-  xs: "480px",
-  s: "768px",
-  m: "1024px",
-  l: "1440px",
+  xsmall: "480px",
+  small: "768px",
+  medium: "1024px",
+  large: "1440px",
 } as const;
 export type MediaSize = keyof typeof MediaQuery;
 
@@ -23,26 +25,3 @@ export const Spacing = {
   large: "32px",
 } as const;
 export type SpacingSize = keyof typeof Spacing;
-
-export const media = {
-  xs: (styles: string) => `
-    @media only screen and (max-width: ${MediaQuery.xs}){
-        ${styles}
-    }
-    `,
-  s: (styles: string) => `
-    @media only screen and (max-width: ${MediaQuery.s}){
-        ${styles}
-    }
-    `,
-  m: (styles: string) => `
-    @media only screen and (max-width: ${MediaQuery.m}){
-        ${styles}
-    }
-    `,
-  l: (styles: string) => `
-    @media only screen and (max-width: ${MediaQuery.l}){
-        ${styles}
-    }
-    `,
-};
