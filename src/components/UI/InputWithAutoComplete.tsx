@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from 'react';
-import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from 'react-icons/fa';
-import styled from 'styled-components';
+import React, { ChangeEvent, useState } from "react";
+import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from "react-icons/fa";
+import styled from "styled-components";
 
-import { colors, Spacing } from '../../helpers/style';
-import { InputProps } from '../../type/input';
+import { colors, Spacing } from "../../helpers/style";
+import { InputProps } from "../../type/input";
 
 /**
  * Input with auto complete functionality
@@ -87,7 +87,6 @@ export function InputWithAutoComplete(
   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
-
     switch (event.key) {
       case "ArrowUp":
         event.preventDefault();
@@ -97,6 +96,8 @@ export function InputWithAutoComplete(
         break;
       case "ArrowDown":
         event.preventDefault();
+        // in this case we need to exit ?? by adding the case "Tab":
+        if (suggestions.length - 1 === focused) {}
         const prevFocused = focused === undefined ? -1 : focused;
         setFocused(prevFocused + 1);
         break;
@@ -104,7 +105,7 @@ export function InputWithAutoComplete(
       case "Enter":
         event.preventDefault();
         const pokemonSelected = search.suggestions.find(
-          (pokemon, index) => index === focused
+          (_, index) => index === focused
         );
         if (pokemonSelected) {
           suggestionSelected(pokemonSelected);
@@ -112,7 +113,7 @@ export function InputWithAutoComplete(
         break;
       case "Tab":
       case "Escape":
-        setIsComponentVisible(false)
+        setIsComponentVisible(false);
         setSearch({
           text: "",
           suggestions: [],

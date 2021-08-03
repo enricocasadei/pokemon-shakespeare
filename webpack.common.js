@@ -3,14 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
-  output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
-  mode: process.env.NODE_ENV || "development",
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "index.bundle.js",
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "src"),
-    hot: true,
   },
   module: {
     rules: [
@@ -30,6 +28,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: "src/images/favicon.ico",
       template: path.join(__dirname, "src", "index.html"),
-    }),
+    })      
   ],
 };
