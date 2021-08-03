@@ -4,6 +4,7 @@
     "jsx": "react",
     "target": "ES2019",
     "lib": ["dom", "ES2020"],
+    "sourceMap": true,  
     "strict": true,
     "moduleResolution": "Node",
     "importHelpers": true,
