@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import { MediaQuery, Spacing } from '../helpers/style';
-import { cleanString } from '../helpers/utils';
-import { FavoriteList } from './FavoriteList';
-import { IntroductoryText } from './IntroductoryText';
-import { PokemonCard } from './PokemonCard';
-import { PokemonInput } from './PokemonInput';
-import { ResultsBox } from './ResultsBox';
-import { Container, Section } from './UI/Layout';
+import { MediaQuery, Spacing } from "../helpers/style";
+import { cleanString } from "../helpers/utils";
+import { FavoriteList } from "./FavoriteList";
+import { IntroductoryText } from "./IntroductoryText";
+import { PokemonCard } from "./PokemonCard";
+import { PokemonInput } from "./PokemonInput";
+import { ResultsBox } from "./ResultsBox";
+import { Container, Section } from "./UI/Layout";
 
 /**
  * Main component to manage the state of the application between the children components

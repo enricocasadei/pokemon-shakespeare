@@ -1,8 +1,8 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import fetchMock from 'fetch-mock';
-import React from 'react';
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import fetchMock from "fetch-mock";
+import React from "react";
 
-import { PokemonInput } from './PokemonInput';
+import { PokemonInput } from "./PokemonInput";
 
 describe("PokemonInput", () => {
   afterEach(() => {

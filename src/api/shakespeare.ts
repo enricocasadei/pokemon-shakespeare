@@ -1,5 +1,5 @@
-import { stripHtml } from '../helpers/utils';
-import { GenericError, NetworkError } from '../type/errors';
+import { stripHtml } from "../helpers/utils";
+import { GenericError, NetworkError } from "../type/errors";
 
 const SHAKESPEARE_URL = "https://api.funtranslations.com/translate";
 

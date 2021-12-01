@@ -1,7 +1,7 @@
-import fetchMock from 'fetch-mock';
+import fetchMock from "fetch-mock";
 
-import { stripHtml } from '../helpers/utils';
-import { getTranslation } from './pokemon';
+import { stripHtml } from "../helpers/utils";
+import { getTranslation } from "./pokemon";
 
 describe("getTranslation", () => {
   afterEach(() => {
@@ -87,7 +87,7 @@ describe("getTranslation", () => {
 
     try {
       await makeCall();
-      expect(1).toBe(2)
+      expect(1).toBe(2);
     } catch (error) {
       expect(error.type).toBe("GenericError");
       expect(error.message).toBe("Pokemon description to translate not found");

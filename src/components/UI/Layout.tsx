@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
-import { colors, MediaQuery } from '../../helpers/style';
+import { colors, MediaQuery } from "../../helpers/style";
 
 /**
  * global style to be applied directly on the <html> tag

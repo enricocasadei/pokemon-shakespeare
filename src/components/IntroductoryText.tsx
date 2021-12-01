@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Text } from './UI/Text';
+import { Text } from "./UI/Text";
 
 export function IntroductoryText() {
   return (

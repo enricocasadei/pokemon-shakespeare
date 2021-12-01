@@ -1,7 +1,7 @@
-import React, { createContext, useCallback, useContext } from 'react';
+import React, { createContext, useCallback, useContext } from "react";
 
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import { PokemonSaved } from '../type/pokemon';
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { PokemonSaved } from "../type/pokemon";
 
 const KEY_STORAGE = "pokemon-favorite-list";
 

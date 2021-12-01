@@ -1,8 +1,13 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from "react";
 
-export function useAbortController<T>(fn: (signal: AbortSignal) => T): [T, AbortController] {
+export function useAbortController<T>(
+  fn: (signal: AbortSignal) => T
+): [T, AbortController] {
   const controller = useRef<AbortController>(new AbortController());
-  const withSignal = useMemo(() => fn(controller.current.signal), [controller.current.signal, fn]);
+  const withSignal = useMemo(
+    () => fn(controller.current.signal),
+    [controller.current.signal, fn]
+  );
 
   useEffect(() => {
     const ctrl = controller.current;

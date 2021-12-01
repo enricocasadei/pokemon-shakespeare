@@ -1,6 +1,6 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from "@testing-library/react-hooks";
 
-import { useFetch } from './useFetch';
+import { useFetch } from "./useFetch";
 
 describe("useFetch", () => {
   it("makes the result to change: from undefined to the value retrieve ", async () => {

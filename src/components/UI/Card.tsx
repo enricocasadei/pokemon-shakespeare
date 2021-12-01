@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import { colors, Spacing } from '../../helpers/style';
+import { colors, Spacing } from "../../helpers/style";
 
 const basicPadding = css`
   padding: ${Spacing.large};

@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from "react";
 
-import { GenericError } from '../type/errors';
-import { useAbortController } from './useAbortController';
+import { GenericError } from "../type/errors";
+import { useAbortController } from "./useAbortController";
 
 export type PromiseWithSignal<T> = (signal: AbortSignal) => Promise<T>;
 
@@ -29,8 +29,6 @@ export function useFetch<T>(
         setResponse({ data: res });
       })
       .catch((err: GenericError) => {
-        console.error(err);
-
         setResponse({ error: err });
       });
   }, dependency);

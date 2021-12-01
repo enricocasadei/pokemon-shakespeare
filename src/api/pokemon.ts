@@ -1,6 +1,6 @@
-import { GenericError, NetworkError } from '../type/errors';
-import { Pokemon, PokemonListReturn, PokemonSaved } from '../type/pokemon';
-import { getShakespeare } from './shakespeare';
+import { GenericError, NetworkError } from "../type/errors";
+import { Pokemon, PokemonListReturn, PokemonSaved } from "../type/pokemon";
+import { getShakespeare } from "./shakespeare";
 
 const BASE_POKEMON_URL = "https://pokeapi.co/api/v2";
 
@@ -14,23 +14,25 @@ export function getOriginalPokemonListUrl() {
 
 /**
  *  function to retrieve the translation: it make the 2 http call one after the other
- *  */ 
+ *  */
 export async function getTranslation(
   name: string,
   signal: AbortSignal
 ): Promise<PokemonSaved> {
-  
   const response = await fetch(getPokemonUrl(name), { signal });
 
   if (response.ok) {
     const data = (await response.json()) as Pokemon;
-    
+
     const text = data.flavor_text_entries.find(
       (text) => text.language.name === "en"
     );
-    
+
     if (text && text.flavor_text) {
-      const shakespeareResponse = await getShakespeare(text.flavor_text, signal);
+      const shakespeareResponse = await getShakespeare(
+        text.flavor_text,
+        signal
+      );
       return {
         name,
         id: data.id,

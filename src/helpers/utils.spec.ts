@@ -1,4 +1,4 @@
-import { cleanString, stripHtml } from './utils';
+import { cleanString, stripHtml } from "./utils";
 
 describe("cleanString", () => {
   it(" works with value ", () => {
@@ -32,7 +32,11 @@ describe("stripHtml", () => {
     expect(result).toBe("");
   });
   it(" works with value", () => {
-    const result = stripHtml("At which hour hunting,<br>'t skims the surface of water at high <p>speed to pick off unwary prey</p>");
-    expect(result).toBe("At which hour hunting,'t skims the surface of water at high speed to pick off unwary prey");
+    const result = stripHtml(
+      "At which hour hunting,<br>'t skims the surface of water at high <p>speed to pick off unwary prey</p>"
+    );
+    expect(result).toBe(
+      "At which hour hunting,'t skims the surface of water at high speed to pick off unwary prey"
+    );
   });
 });

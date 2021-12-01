@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from 'react';
-import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from 'react-icons/fa';
-import styled from 'styled-components';
+import React, { ChangeEvent, useState } from "react";
+import { FaRegArrowAltCircleDown, FaRegArrowAltCircleUp } from "react-icons/fa";
+import styled from "styled-components";
 
-import { colors, Spacing } from '../../helpers/style';
-import { InputProps } from '../../type/input';
+import { colors, Spacing } from "../../helpers/style";
+import { InputProps } from "../../type/input";
 
 /**
  * Input with auto complete functionality
@@ -97,7 +97,8 @@ export function InputWithAutoComplete(
       case "ArrowDown":
         event.preventDefault();
         // in this case we need to exit ?? by adding the case "Tab":
-        if (suggestions.length - 1 === focused) { }
+        if (suggestions.length - 1 === focused) {
+        }
         const prevFocused = focused === undefined ? -1 : focused;
         setFocused(prevFocused + 1);
         break;

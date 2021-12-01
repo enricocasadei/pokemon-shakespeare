@@ -16,11 +16,12 @@ module.exports = {
         exclude: /node_modules/,
         use: ["ts-loader"],
       },
-      {
-        test: /\.(css)$/,
-        use: ["style-loader", "css-loader"],
-      },
       { test: /\.(jpe?g|png|gif|ico|svg)$/i, use: "file?name=[name].[ext]" },
+      {
+        test: /\.(ts|tsx)$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
+      },
     ],
   },
   plugins: [
